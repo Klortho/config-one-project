@@ -1,8 +1,12 @@
-# Slideshow for config-one presentation
+# config-one project
 
 
-* Uses Remark
-* With [animate.css](https://github.com/daneden/animate.css). See that
-  README for a huge long list of animation effects you can add.
+* [Roadmap](roadmap.md)
+
+* Slides:
+    * [Notes on the slide](slides.md), including to-do
+    * [Slides so far](slides/) - not so much
+
+* [More notes](more-notes.md) - need to be organized
 
 

@@ -1,50 +1,9 @@
-Live the dream: let's make the tree-chart app 100% configuration:
-
-- But first: the tree display showing how the algorithm works: code in
-  https://github.com/Klortho/config-one/blob/master/src/seed.js 
-- Can the demo chart size be dynamic?
-- Start at the very beginning: config-one/seed.js.
-- generalize/standardize the mechanism for including/overriding. This can be
-  used for anything that resolves to a config object.
-- config1 already does this with its defaults: it specifies a number of
-  resolvers/loaders, and then bootstraps.
-- get rid of ramda dependency everywhere
-- By default, it should treat all function-types as atomic. Use instantiators
-  to attach options to functions/classes ("I'll have mine on the side").
-
-Work on demo:
-
-* I want visibility into what it is doing. Some kind of repl that's lighter than
-  the console, and tailored to this app, and can open in its own little popper
-
-# Material to be dispatched
-
-## Other
-
-
-More points to add:
-
-* [Open-closed principle](https://en.wikipedia.org/wiki/Open/closed_principle): "software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification";
-
-* Reference: [Lenses and Virtual DOM Support Open 
-  Closed](http://joneshf.github.io/programming/2015/12/19/Lenses-and-Virtual-DOM-Support-Open-Closed.html)
-
-
-# The tree-chart example
-
-* Runtime, per-node override of default node settings. See node.js.
-
-* atomTest, to create an extension of config1 that knows that tinycolor
-  objects are atomic.
 
 
 
-* Using ES6 Symbols:
-    * Symbol('tree-chart-demo') - to bind DOM elements back to the chart
-    * src/seed.js:const c1symbol = Symbol('config-one'); - to flag
-      certain objects as being atomic.
 
-* Definitely mention serializing CSS
+
+
 
 
 
@@ -53,10 +12,6 @@ More points to add:
 
 Crazy thoughts:
 
-* Can overrides be settings?  That is, I want to publish my app with a layered
-  definition of settings: defaults for the base library, and other 'profiles'.
-  Well, shouldn't they be configurable? I think that's basically implying
-  nested views: recipes that that build layered views.
 
 --------------------
 
