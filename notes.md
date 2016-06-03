@@ -1,3 +1,9 @@
+* Switch to these conventions *everywhere*:
+    - `C1` from the get-go, not `config1` or anything else
+    - `X1' instead of `C1.extend`
+    - what to use as the dummy variable for a recipe?
+    - `options` and `defaults` for property names; `opts` for argument.
+
 
 * To fix: use [object method 
   shorthand](https://github.com/airbnb/javascript#es6-object-shorthand)
@@ -16,7 +22,8 @@
    Maybe they could be flagged with a symbol somehow, but I doubt it.
 
 
-
+* In config-one: ppConsole et. al. should auto-convert source objects into
+  views (that it, they should auto- `extend` )
 
 
 ## tree-charts for the demo.
@@ -31,12 +38,12 @@ Left to do:
 * Can we somehow animate the steps when making the view?
 
 
-
-
 ## Make sure to show / talk about
 
 * The configuration in tree-chart/main:
     - Note the method of inheritance
+
+
 
 
 * FP musings: diff. between assignment and declaration can be subtle:
@@ -54,9 +61,6 @@ Left to do:
 * Talk about the functional aspects of XSLT: what's nice, what it lacks
   (functions as 1st class objects).. XSLT 1, for example, it's always very 
   hard to do pipelines.
-
-
-* Describe the syntactic noise problem.
 
 
 
