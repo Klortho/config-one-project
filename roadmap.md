@@ -20,18 +20,6 @@
 * See how close we can get to making config-one and tree-chart
   apps 100% configuration and 0% "hard-coded".
 
-* Implement an "instantiator"
-    * This is a standardization of the mechanism for 
-      including and overriding another class. In effect, it lets you
-      create an instance of an object, with options overrides.
-    * Can also be used for copy/grafting other sections of a config
-      tree -- something which I've already found I do a lot.
-    * The first bits of code to use with this is the config-one
-      source specifiers, used to bootstrap the config-one options.
-
-    * This will make it more palatable to treat all "function" types as atomic
-      by default. Options for those can be specified on the side.
-
 
 * Relative views.
   It should be possible to pass a "relative view" into a *recipe*.
@@ -49,6 +37,46 @@
       evaluated within a context, the resultant values never change.
 
 
+## Implement a new class: Instantiator
+
+* This is a standardization of the mechanism for 
+  including and overriding another class. 
+* In effect, it lets you
+  create an instance of an object, with options overrides defined "on the side"
+* Can also be used for copy/grafting other sections of a config
+  tree -- something which I've already found I do a lot.
+* The first bits of code to use with this is the config-one
+  source specifiers, used to bootstrap the config-one options.
+
+* This will make it more palatable to treat all "function" types as atomic
+  by default. Options for those can be specified on the side.
+
+
+An instantiator is either an instance of a class, or else a class reference 
+plus a set of options specific to that class, that can be used to instantiate
+a new instance.
+
+So, and instantiator can be passed around as a C1 option. But, it is not the
+same as a recipe. When these are encountered in a view, they are
+immediately evaluated and the replaced with the results of calling that
+constructor.
+
+
+```
+<instance>
+```
+
+or 
+
+```
+{ C1.construct: {   // C1.construct is an ES6 symbol
+    'class': <class object>,
+    'options': <options> }
+  }
+```
+
+
+
 ## tree-chart to do
 
 * Demo:
@@ -56,6 +84,7 @@
     - A little status console would be nice. It should list keyboard shortcuts
     - Make the demo chart size dynamic - the svg should grow as the chart
       does. But: don't make it as complicated as dtd-diagram was
+
 
 
 ## npm submodule configuration.
@@ -80,78 +109,11 @@ projects to use it.
 
 # New architecture
 
+## Musings
+
 - I need to think some more about the similarities between config-one and the
   default data model of tree-chart. Much more than a coincidence. They need to
   inform each other.
-
-- Everything in one git repo, separate package.json files for each publishable
-  thing.
-
-- show-one - a lightweight framework for demos. 
-    - Any give demo instance consists of:
-      - Renderer
-      - List of steps. Each step is just a config1 view layered on the last
-    - The show framework has controls for stepping back and forth among the steps.
-    - some utilities for converting various other types of data into shows 
-      and steps.
-
-- code-one - A lightweight framework for coding JS in a literate style
-    - Source documents are all CommonMark
-    - Uses markdown-it for conversion
-    - Different code blocks for:
-        - primary JS source
-        - tests
-        - examples (i.e. plain-old documentation)
-    - Converters for:
-        - show-one format for slide-show
-        - JS source
-        - JS test
-
-- config-one
-    - Developed in this style.
-    - It also needs to export config-zero, which is what seed is now.
-
-- tree-chart
-    - Turn the demos that I have now into show-one instances
-    - Refactor a bit: see to-do list below
-
-
-
-## New class: Instantiator
-
-This is a very general utility that should be added to config-one.
-
-An instantiator is either an instance of a class, or else a class reference 
-plus a set of options specific to that class, that can be used to instantiate
-a new instance.
-
-So, and instantiator can be passed around as a C1 option. But, it is not the
-same as a recipe, because it is not guaranteed to be a pure function. For
-example, an instantiator might evaluate a bunch of things based on the
-environment. Therefore, when these are encountered in a view, they are
-immediately evaluated and replaced with the results of calling that
-constructor.
-
-
-```
-<instance>
-```
-
-or 
-
-```
-{ C1.construct: {   // C1.construct is an ES6 symbol
-    'class': <class object>,
-    'options': <options> }
-  }
-```
-
-
-
-# config-one refactoring
-
-
-## Musings
 
 - The views I've been describing are almost perfectly modelled by config1
   views.
@@ -168,7 +130,9 @@ or
   be accessible at all.
 
 
-## API changes
+## config-one API changes
+
+I'm pretty happy with the API, but I think a few tweaks are in order.
 
 "read-only" means that the property never changes its value, even when C1 is
 extended.
@@ -211,10 +175,15 @@ from a path glob).
 
 
 
+## Tree-chart refactoring
 
+This is major, but I want to keep everything working while doing it. I'm going
+to mark new code with these fences:
 
-
-# Tree-chart refactoring
+```
+//--------------------------------------- phase 2 code
+//--------------------------------------- end phase 2 code
+```
 
 Conventions:
 
@@ -341,7 +310,7 @@ that's exposed to users, so it should be intuitive.
 
 For "chart-node" - these are objects we maintain. They are 
 completely immutable: there is a different instance of these for every
-node for every view of every tree. 
+node for every view of every tree.
 
 ### Methods about this instance
 
@@ -354,13 +323,18 @@ node for every view of every tree.
 
 ### Methods to get information about the current view:
 
-- get root() - reference to the root cnode (synonymous with tree view)
-  to which it belongs
-- get parent()
-- get ancestors() - list, starting with parent, up to root
 - get subtree() - list of all cnodes in this subtree, starting with this
   one, in depth-first order
 - get descendants() - same as subtree(), but without self.
+
+> I used to have these here, but now I think this is bad. Any cnode shouldn't
+> know about its context:
+> 
+> - get root() - reference to the root cnode (synonymous with tree view)
+>   to which it belongs
+> - get parent()
+> - get ancestors() - list, starting with parent, up to root
+
 
 
 ### Methods to get info about other views
