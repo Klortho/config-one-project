@@ -1,0 +1,625 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ser",
+				"serviceQueryUrl"
+			],
+			[
+				"templ",
+				"templateFuncs"
+			],
+			[
+				"def",
+				"defaultProfile"
+			],
+			[
+				"bower",
+				"bowerComponents"
+			],
+			[
+				"default",
+				"defaultConfig"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/klortho/work/to-do.md",
+			"settings":
+			{
+				"buffer_size": 80,
+				"line_ending": "Unix",
+				"name": "# To do"
+			}
+		},
+		{
+			"file": "/Users/klortho/work/javascript-devops/readme/README.md",
+			"settings":
+			{
+				"buffer_size": 4122,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 282,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config-one/src/seed.js",
+			"settings":
+			{
+				"buffer_size": 11721,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/klortho/work/config-one",
+		"/Users/klortho/work/config-one/config-one",
+		"/Users/klortho/work/config-one/config-one/src"
+	],
+	"file_history":
+	[
+		"/Users/klortho/temp/circular.js",
+		"/Users/klortho/work/javascript-devops/fp-presentation.md",
+		"/Users/klortho/work/to-do-now.md",
+		"/Users/klortho/work/devdocs/git-http-server2/main.js",
+		"/Users/klortho/work/devdocs/git-http-server2/package.json",
+		"/Users/klortho/work/devdocs/git-http-server2/test/test.js",
+		"/Users/klortho/work/devdocs/git-http-server2/README.md",
+		"/Users/klortho/git/klortho/config-one/README.md",
+		"/Users/klortho/work/datadicer/README.md",
+		"/Users/klortho/Desktop/PathogenDetectionSite.md",
+		"/Users/klortho/work/datadicer/sample-grunt-project/grunt-notes.md",
+		"/Users/klortho/work/datadicer/datadicer/src/app-templ.js",
+		"/Users/klortho/work/datadicer/datadicer/.gitignore",
+		"/Users/klortho/work/datadicer/datadicer/Gruntfile.js",
+		"/Users/klortho/work/datadicer/datadicer/app/scripts/filters.js",
+		"/Users/klortho/work/datadicer/datadicer/app/scripts/mainController.js",
+		"/Users/klortho/work/datadicer/datadicer/app/scripts/routing.js",
+		"/Users/klortho/work/datadicer/datadicer/app/scripts/templates.js",
+		"/Users/klortho/work/datadicer/datadicer/app/scripts/app.js",
+		"/Users/klortho/work/datadicer/datadicer/config-local.json",
+		"/Users/klortho/work/datadicer/datadicer/config-local.js",
+		"/Users/klortho/work/datadicer/datadicer/.jshintrc",
+		"/Users/klortho/work/datadicer/datadicer/app/scripts/config.js",
+		"/Users/klortho/work/datadicer/datadicer/app/index.html",
+		"/Users/klortho/work/datadicer/datadicer/grunt-config-config.js",
+		"/Users/klortho/work/datadicer/grunt-template-functions/test/Gruntfile.js",
+		"/Users/klortho/git/klortho/grunt-template-functions/.gitignore",
+		"/Users/klortho/work/datadicer/grunt-template-functions/README.md",
+		"/Users/klortho/work/datadicer/grunt-template-functions/main.js",
+		"/Users/klortho/work/datadicer/grunt-template-functions/package.json",
+		"/Users/klortho/work/datadicer/grunt-template-functions/Gruntfile.js",
+		"/Users/klortho/work/datadicer/sample-grunt-project/grunt-template-functions.js",
+		"/Users/klortho/work/datadicer/sample-grunt-project/Gruntfile.js",
+		"/Users/klortho/git/klortho/node-curried-paths/README.md",
+		"/Users/klortho/work/datadicer/node-curried-paths/package.json",
+		"/Users/klortho/work/datadicer/sample-grunt-project/package.json",
+		"/Users/klortho/work/datadicer/grunt-config-config/main.js",
+		"/Users/klortho/work/datadicer/node-curried-paths/README.md",
+		"/Users/klortho/work/datadicer/node-curried-paths/test/test.js",
+		"/Users/klortho/work/datadicer/node-curried-paths/test/.gitignore",
+		"/Users/klortho/work/datadicer/node-curried-paths/main.js",
+		"/Users/klortho/work/datadicer/grunt-config-config/package.json",
+		"/Users/klortho/work/datadicer/sample-grunt-project/util.js",
+		"/Users/klortho/work/datadicer/sample-grunt-project/Gruntfile-inspect.js",
+		"/Users/klortho/work/datadicer/sample-grunt-project/src/hello.js",
+		"/Users/klortho/work/datadicer/grunt-config-config/README.md",
+		"/Users/klortho/work/datadicer/sample-grunt-project/my-utilities.js",
+		"/Users/klortho/work/datadicer/sample-grunt-project/.gitignore",
+		"/Users/klortho/work/datadicer/datadicer/user-config.js",
+		"/Users/klortho/work/datadicer/datadicer/cfg.js",
+		"/Users/klortho/work/datadicer/datadicer/package.json",
+		"/Users/klortho/work/datadicer/datadicer/app/solr.html",
+		"/Users/klortho/work/datadicer/datadicer/app/standalone.html",
+		"/Users/klortho/work/datadicer/grunt-config-config/test/Gruntfile.js",
+		"/Users/klortho/work/datadicer/datadicer/bower.json",
+		"/Users/klortho/git/klortho/grunt-config-config/README.md",
+		"/Users/klortho/work/datadicer/grunt-config-config.js",
+		"/Users/klortho/work/datadicer/grunt-config-config/test/gruntfiles/main.js",
+		"/Users/klortho/work/datadicer/grunt-config-config/test/package.json",
+		"/Users/klortho/work/datadicer/grunt-config-config/test/dummy.js",
+		"/Users/klortho/work/datadicer/grunt-config-config/grunt.klortho.js",
+		"/Users/klortho/work/datadicer/datadicer/README.md",
+		"/Users/klortho/work/datadicer/grunt-config-config/try-callsite.js",
+		"/Users/klortho/work/datadicer/singularjs-github/README.md",
+		"/Users/klortho/work/datadicer/singularjs-github/Gruntfile.js",
+		"/Users/klortho/work/datadicer/datadicer/app/scripts/services/ngramAppConfig.js",
+		"/Users/klortho/work/datadicer/singularjs-github/package.json",
+		"/Users/klortho/work/datadicer/notes.md",
+		"/Users/klortho/work/datadicer/singularjs-github/bower.json",
+		"/Users/klortho/work/datadicer/singularjs/bower.json",
+		"/Users/klortho/work/datadicer/singularjs/README.md",
+		"/Users/klortho/work/datadicer/datadicer-tutorials/styles/website.css",
+		"/Users/klortho/work/datadicer/datadicer-tutorials/SUMMARY.md",
+		"/Users/klortho/work/datadicer/datadicer/port-forwards.sh",
+		"/Users/klortho/stash/maloneyc/grunt-config-config/main.js",
+		"/Users/klortho/stash/maloneyc/grunt-config-config/package.json",
+		"/Users/klortho/stash/ngram/datadicer/grunt.klortho.js",
+		"/Users/klortho/stash/ngram/datadicer/gcc.js",
+		"/Users/klortho/stash/ngram/datadicer/try.js",
+		"/Users/klortho/stash/ngram/datadicer/try-proxy.js",
+		"/Users/klortho/stash/maloneyc/grunt-config-profiles/test/gruntfiles/main.js",
+		"/Users/klortho/stash/maloneyc/grunt-config-profiles/try-callsite.js",
+		"/Users/klortho/stash/maloneyc/grunt-config-profiles/test/package.json",
+		"/Users/klortho/stash/maloneyc/grunt-config-profiles/test/dummy.js",
+		"/Users/klortho/stash/maloneyc/grunt-config-profiles/test/Gruntfile.js",
+		"/Users/klortho/stash/maloneyc/grunt-config-profiles/main.js",
+		"/Users/klortho/stash/ngram/datadicer/gruntfiles/main.js",
+		"/Users/klortho/stash/maloneyc/grunt-config-profiles/Gruntfile.js",
+		"/Users/klortho/stash/ngram/datadicer/gsave",
+		"/Users/klortho/stash/maloneyc/grunt-config-config/try.js",
+		"/Users/klortho/.ssh/config",
+		"/Users/klortho/work/datadicer/datadicer/_configurable-gruntfile.js",
+		"/Users/klortho/work/datadicer/datadicer/test/karma.conf.js",
+		"/Users/klortho/work/datadicer/datadicer/gsave",
+		"/Users/klortho/stash/ngram/datadicer/grunt/usemin.js",
+		"/Users/klortho/work/datadicer/datadicer/test/spec/services/backenddriver.js",
+		"/Users/klortho/work/datadicer/datadicer/test/spec/directives/searchbox.js",
+		"/Users/klortho/work/datadicer/datadicer/test/.jshintrc",
+		"/Users/klortho/work/datadicer/datadicer/app/scripts/directives/searchbox.js",
+		"/Users/klortho/work/datadicer/datadicer/app/scripts/directives/barchart.js",
+		"/Users/klortho/work/datadicer/datadicer/app/scripts/directives/gridtable.js",
+		"/Users/klortho/work/datadicer/datadicer/dist/index.html",
+		"/Users/klortho/work/datadicer/datadicer/out/test.out",
+		"/Users/klortho/work/datadicer/datadicer/out/test.html",
+		"/Users/klortho/work/datadicer/datadicer/app/styles/view.table.less",
+		"/Users/klortho/work/datadicer/datadicer/app/styles/checkboxInline.css",
+		"/Users/klortho/work/datadicer/bioproject-datadicer/script.js",
+		"/Users/klortho/work/datadicer/bioproject-datadicer/index.html",
+		"/Users/klortho/work/datadicer/datadicer/app/styles/checkboxInline.less",
+		"/Users/klortho/work/datadicer/datadicer/app/styles/barchart.less",
+		"/Users/klortho/work/datadicer/bioproject-datadicer/style.css",
+		"/Users/klortho/work/datadicer/datadicer/dist/datadicer-dist-tree.txt",
+		"/Users/klortho/stash/jsl/bioproject-datadicer/foo/list",
+		"/Users/klortho/work/datadicer/datadicer/app/views/gridTable.html",
+		"/Users/klortho/work/datadicer/datadicer/app/views/advancedOptions.html",
+		"/Users/klortho/work/datadicer/datadicer/configurable-gruntfile.js",
+		"/Users/klortho/work/datadicer/singular/README.md",
+		"/Users/klortho/work/datadicer/datadicer/app/views/popoverlinkmenu.html",
+		"/Users/klortho/work/datadicer/datadicer/app/views/view.html",
+		"/Users/klortho/stash/jsl/bioproject-datadicer/README.md",
+		"/Users/klortho/stash/jsl/bioproject-datadicer/README.MD",
+		"/Users/klortho/stash/jsl/bioproject-datadicer/script.js",
+		"/Users/klortho/stash/maloneyc/grid.app/app/scripts/directives/barchart.js",
+		"/Users/klortho/stash/jsl/bioproject-datadicer/tunnel.sh",
+		"/Users/klortho/stash/maloneyc/grid.app/app/scripts/app.js",
+		"/Users/klortho/stash/jsl/bioproject-datadicer/LICENSE.md",
+		"/Users/klortho/stash/jsl/bioproject-datadicer/.gitignore",
+		"/Users/klortho/stash/jsl/bioproject-datadicer/package.json"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"script-scene",
+			"devdocs",
+			"git-http-server",
+			"console.log",
+			"console",
+			"mkfresh",
+			"dlog",
+			"defaultcon",
+			"projectConfig",
+			"yeoman",
+			"project",
+			"projConfig",
+			"ngramAppConfig",
+			"replace",
+			"option",
+			"proj",
+			"projectConfig",
+			"project",
+			"projectConfig",
+			"appConfig",
+			"appconfig",
+			"jshin",
+			"angular",
+			"scripts",
+			"curriedPath",
+			"templateFunc",
+			"gruntfileFunc",
+			"istr",
+			"templateFuncs",
+			"ngtemp",
+			"ng",
+			".js",
+			"build",
+			".js",
+			"defaultConfig",
+			".tmp",
+			"concat",
+			"oldiesh",
+			"test",
+			"appConfig",
+			"yeoman",
+			"connect",
+			"bower",
+			"concat",
+			"'test/(.*?)'",
+			"'test/(.$?)'",
+			"tests",
+			"yeoman",
+			"appConfig",
+			".tmp",
+			"appConfig",
+			"concat",
+			"'.tmp'",
+			"'\\.tmp/(.*?)'",
+			"'<%= yeoman.dist %>'",
+			"yeoman",
+			"'<%= yeoman.dist %>/(.*?)'",
+			"yeoman",
+			"extend",
+			"'<%= yeoman.app %>/(.*?)'",
+			"script",
+			"base",
+			"cc",
+			"_cc",
+			"cc",
+			"profile",
+			"version",
+			"concat",
+			"ase",
+			"getProfile",
+			"profileConfigs",
+			"defaultProfile",
+			"profilesEnabled",
+			"readConfigJs",
+			"base",
+			"gcc",
+			"newPath",
+			"gcc",
+			"_gcc",
+			"tmp",
+			"livere",
+			"connect",
+			"livereload",
+			"_gcc",
+			"console.log",
+			"bower",
+			"static",
+			"commonConfig",
+			"l",
+			"_sub",
+			"connect",
+			"yeoman",
+			"bower_",
+			".tmp",
+			"sep",
+			".tmp",
+			"test",
+			"testP",
+			"usemin",
+			"dist",
+			"distP",
+			"appP",
+			"path",
+			"subdir",
+			"baseP",
+			"app",
+			"'test/(.*?)'",
+			"test/",
+			"yeoman",
+			"'<%= yeoman.app %>'",
+			"'<%= yeoman.dist %>'",
+			"yeoman",
+			"'<%= yeoman.dist %>/(.*?)'",
+			"yeoman",
+			"appconfig",
+			"appDir",
+			"appPath",
+			"app",
+			"styles",
+			"appPath",
+			"'<%= yeoman.app %>/(.*?)'",
+			"yeoman",
+			"readjson",
+			"yeoman",
+			"appconfig",
+			"jquery",
+			"node_",
+			"boser_com"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"project",
+			"test('$1')",
+			"build",
+			"build()",
+			"build('$1')",
+			"dist()",
+			"dist('$1')",
+			"app('$1')",
+			"app($1)",
+			"d",
+			"test",
+			"dist",
+			"app",
+			"appP()",
+			"testP('$1')",
+			"app",
+			"dist",
+			"distP('$1')",
+			"appP",
+			"appDir",
+			"appPath('$1')",
+			"",
+			"=====",
+			"pretty-pickle"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/klortho/work/to-do.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 80,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								80,
+								80
+							]
+						],
+						"settings":
+						{
+							"auto_name": "# To do",
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/klortho/work/javascript-devops/readme/README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4122,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								156,
+								156
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 282,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "config-one/src/seed.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11721,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								992,
+								992
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 330.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "config-one.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/work/config-one/config-one.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 236.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

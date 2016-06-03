@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>tree-chart</title>
+    <meta charset="utf-8">
+    <style>
+      body {padding: 30px;}
+    </style>
+  </head>
+  <body>
+    <div style='float:right;'><a id='next_a' href='./?1'>
+      <span id='next'>start</span> >></a></div>
+    <h2 id='header'>charts</h2>
+    <div id='chart'></div>
+
+    <script src='config1/config1.js'></script>
+    <script>window.ℂ = config1;</script>
+    <script src='tree-chart/vendor/d3.js'></script>
+    <script src='tree-chart/vendor/d3-flextree.js'></script>
+    <script src='tree-chart/vendor/tinycolor.js'></script>
+    <script src='tree-chart/vendor/ramda.js'></script>
+    <script src='tree-chart/src/extend.js'></script>
+    <script src='tree-chart/src/main.js'></script>
+    <script src='tree-chart/src/tree.js'></script>
+    <script src='tree-chart/src/layout-engine.js'></script>
+
+    <script src='charts.js'></script>
+
+    <script>
+      (function() {
+        var numCharts = 3;
+
+        var search = window.location.search || '?0';
+        var chartNum = Math.floor(search.substr(1));
+        if (chartNum < 0 || chartNum > numCharts) chartNum = 0;
+        console.log(chartNum);
+        if (chartNum == 0) return;
+
+        var nextLink = document.getElementById('next');
+        var nextLinkA = document.getElementById('next_a');
+
+        var nextChart = chartNum + 1;
+        if (nextChart > numCharts) {
+          nextLink.innerHTML = 'go back';
+          nextLinkA.setAttribute('href', './');
+        }
+        else {
+          nextLink.innerHTML = 'next';
+          nextLinkA.setAttribute('href', './?' + nextChart);
+        } 
+
+        document.getElementById('header').innerHTML = 'chart ' + chartNum;
+
+        chartMakers[chartNum]();
+
+      })();
+    </script>
+  </body>
+</html>
+
