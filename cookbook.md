@@ -32,7 +32,7 @@ We should have plugins for lots of file formats, as well as:
 
 It all boils down to this, I think. Let `E` be shorthand for 1C1.extend1:
 
-```
+```javascript
 // Let's say we have these:
 cfg0A = E({});
 cfg0B = E({});
@@ -57,6 +57,7 @@ E(cfg1, cfg2, cfg3) == E(E(cfg1, cfg2), cfg3)
                     == E(cfg1, E(cfg2, cfg3))
                     == E(E(cfg1), E(cfg2), E(cfg3))
                     == ...
+```
 
 -> This means we have a requirement to generate a uid for a view, in such a
 way that they combine deterministically.
@@ -71,8 +72,7 @@ See the tree-chart demo hierarchy for a good example.
 This is the right way to do it, I think. A good pattern for coding a class, that
 allows for it to be inherited from, is:
 
-
-```
+```javascript
 const C1 = require('config-one');
 
 // Define the default settings for this class
@@ -114,7 +114,7 @@ Super.defaults = defaults;
 
 A class that inherits from the above would look like this:
 
-```
+```javascript
 // This class' default settings are an extension of the super's defaults. 
 // Declare the extension while the module is
 // being evaluated -- then you're guaranteed it will be used when any instances 
@@ -122,7 +122,7 @@ A class that inherits from the above would look like this:
 
 const defaults = C1.extend(Super.defaults, { 
   verbose: true,
-};
+});
 
 class Derived extends Super {
 
@@ -158,29 +158,43 @@ for example, UI widgets that provide the ability to override settings in a
 So let's say `Shazzam` allows settings to be specified in this manner. For
 example:
 
-```
+```html
 <div class='shazzam' data-shazzam='{"color":"green"}' />
 ```
 
-This is handled easily by config-one, through the use of a "settings gatherer".
-
-[How about "harvester" as the name for this?]
+This is handled easily by config-one, through the use of a "options harvester".
 
 [I think this takes the place of my "instantiator", describes elsewhere. On 
 the other hand, maybe not. That seems more general -- any time you want to
 have aggregated objects, rather than inherited.]
 
-A settings gatherer is almost exactly the same as a recipe, but there is one
-crucial difference: a gatherer is unpredicable -- it might return a different 
-result each time. This is usually because it goes to an outside source to
-get the settings. That outside source, or the larger context in general, can
-be thought of as a parameter to the function, such that every time the function
-is called, the context parameter might be different.
+A settings harvester is a little bit like a recipe, in that it is a function
+that gets executed automatically when the view is created. But there are 
+fundamental differences. Here's my attempt to describe them:
+
+* Similarity: when either one is evaluated in the context  of a view, the
+  tree of data that they produce becomes "frozen". This is an absolute requirement
+  imposed by the immutable nature of a view.
+* Harvesters' results are unpredictable, since they might reach out to the
+  environment or other external source of data. In this sense, harvesters act
+  like source objects, such that, in general:
+
+    ```
+    C1.extend(h1) != C1.extend(h1);
+    ```
+
+  The same is not true for a recipe, when it is part of a view. (In fact,
+  it is impossible to `C1.extend(r1)`, because that would  be a circular
+  reference.)
+
+* Harvesters can produce data at the root node, but recipes cannot.
+
+
 
 
 The `Shazzam` class would be:
 
-```
+```javascript
 const defaults = { 
   'color', 'blue',
   optionsSelector: '.shazzam',
@@ -189,8 +203,10 @@ const defaults = {
 class Shazzam {
   constructor(opts) {
 
-    // Here is where to apply the gatherer, since it operates per-instance:
-    this._options = C1.extend(defaults, DataAttributeJsonGatherer, opts);
+    // Apply the settings from the data attribute on the instance,
+    // with higher precedence than the defaults, but less than the
+    // constructor options.
+    this._options = C1.extend(defaults, DataAttributeJsonHarvester, opts);
 
     ...
   }
@@ -204,58 +220,26 @@ Shazzam.defaults = defaults;
 
 But how does it work, really?
 
-The `DataAttributeJsonGatherer` object is defined something like the following.
-It is a function that returns a two element array. The first element is a 
-recipe, that is resolved to get the settings. The second is just an empty
-object that "poisons the view". When config-one
-sees this, it can no longer consider the master view to be 
-immutable, and it must resolve the entire view in context. Which
-is exactly what we want.
+The `DataAttributeJsonHarvester` object is simply a function that is marked
+with an ES6 symbol that tells the library to execute it, and replace it with
+its return value.
 
-The whole object is marked with a Symbol, that tells config-one to evaluate it
-and to substitute its return value into the position it occupies -- just as it
-does for recipes.
-
-Hah! C1, when called `C1()` is, itself, just a gatherer, isn't it?
+[Isn't `C1` itself just a harvester?]
 
 
-
-
-```
-// Source of all gatherers:
-const defaults = {};
-const gatherer = function() {
-  ...
-};
-gatherer.new = function(opts) {
-  // clone self with overriden options
-}
-
-// ... till we get to something like
-
+```javascript
 const defaults = {
-  ...
-};
-const DataAttributeJsonGatherer = function() {
-  return [
-    C1(X=> {
-      const optsSel = X.optionsSelector;
-      const elem = document.querySelector(optsSel);
-      const attrName = 
-      return JSON.parse()
-    }),
-    {}
-  ]
+  elementSelector: null,
 };
 
-// Mark it indelibly with an ES6 symbol.
-
-DataAttributeJsonGatherer[Symbol(config-one)] = {'type': 'gatherer'};
-
-
+const DataAttributeJsonHarvester = function() {
+  const optsSel = X.optionsSelector;
+  const elem = document.querySelector(optsSel);
+  const attrName = 
+  return JSON.parse()
+};
+DataAttributeJsonHarvester[C1.symbol)] = {'type': 'harvester'};
 ```
-
-
 
 
 

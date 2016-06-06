@@ -17,10 +17,6 @@
 * **Ramda:** I have a love/hate relationship here, but I think I should keep it
   for now.
 
-* See how close we can get to making config-one and tree-chart
-  apps 100% configuration and 0% "hard-coded".
-
-
 * Relative views.
   It should be possible to pass a "relative view" into a *recipe*.
   This would be a *view* that represents the *current* node. 

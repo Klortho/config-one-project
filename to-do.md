@@ -1,7 +1,6 @@
-# config-one improvements
+# To do - config-one
 
-
-### Fix loading of JS files with dist/config1.js
+## Fix loading of JS files with dist/config1.js
 
 I need to fix it so that the webpack-generated dist in dist/config1.js can 
 dynamically load JS files. I think `require` is the way to go, but I'm having 
@@ -12,8 +11,6 @@ I think maybe the IgnorePlugin will work, and I tried it with some naive attempt
 but I need to try it again.
 
 In the meantime, test-read is disabled for the dist.
-
-
 
 
 ## Build configuration
@@ -127,5 +124,62 @@ const aggView0 = C1.extend(aView, {b: bView});
 const aggView1 = C1.extend(aView, {b: b});
 
 const aggView2 = C1.extend( R.merge(a, {b: b}) );
+
+
+
+
+
+# To do - tree-chart
+
+## Demo files cleanup
+
+The class hierarchy needs to be blended harmoniously with the settings overrides.
+While I'm doing this, I'm taking notes in the cookbook.
+
+* Make Demo.js and DemoBoxes.js jibe with the cookbook example
+
+* Use inheritance
+* Clean up the options settings
+* Implement the convention:
+    * obj.defaults
+    * obj.options
+
+* Hierarchy
+    * index.html
+        * demo.js 
+            - Defines `Demo` global
+            - has .defaults member
+            - Subclasses:
+                * demo-boxes 
+                * demo-words
+                * demo-jsobj
+
+## Tests
+
+- Make sure overrides work with this precedence order:
+    - Any TreeChart library defaults
+    - Demo.defaults
+    - Demo-subclass.defaults
+    - index.html
+- Other places we should be able to add overrides:
+    - @data attribute on the element
+- And don't forget sublayers:
+    - Main renderer
+        - d3svg.js
+        - d3svg-subclass.js
+    - Node renderer
+        - d3svg-node
+        - d3svg-subclass
+
+* Start with just boxes.
+* Start to add methods to demo
+* Just one master list of demos.
+
+
+## Build process
+
+Reimplement what we have for config-one.
+
+
 
 
