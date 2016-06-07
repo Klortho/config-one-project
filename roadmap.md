@@ -2,9 +2,6 @@
 
 * Presentation: work on this as you go. Don't let it get so far behind.
 
-* For now, I'm keeping all the documentation for this here, including
-  implementation details that used to be in config-one, for example.
-  Maybe dispatch them later if that makes sense to do
 
 * First priority right now is to get a working tree display 
   showing how the algorithm works. It should animate, illuminate

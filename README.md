@@ -1,33 +1,67 @@
 # config-one project
 
-This is the master documentation for config-one and the demo app that I'm
-building with it, tree-chart. Here are the relevant pages:
+This repo holds the master documentation for 
+[config-one](https://github.com/klortho/config-one) and the demo app,
+[tree-chart](https://github.com/klortho/tree-chart), that I'm building with it. 
 
+### User documentation
 
-## Other repositories
+For installation instructions and basic usage examples, see the README files:
 
 * [config-one](https://github.com/klortho/config-one)
 * [tree-chart](https://github.com/klortho/tree-chart)
 
-## This repository (documentation)
+Other pages
 
-* Intro slides - not much here yet
-    * [Notes on the slide](slides.md), including to-do
-    * [Slides so far](slides/) - not so much
+* In development: [slide show intro/tutorial](slides/) - not much here yet.
+  See also these [notes on the slide](slides.md), including a to-do list.
 
-* [Cookbook](cookbook.md) - practical how-tos for various use-cases. Not
-  everything described here is implemented, but if it's on this page it
-  is imminent.
+* [Cookbook](cookbook.md). Practical how-tos. These features are either
+  complete, or nearly so.
 
-* [Implementation](implementation.md) - detailed technical notes.
-
-* [To do]() - these are smallish, short-term, miscellaneous items
-
-* [Roadmap](roadmap.md) - high-level direction I'm going; something like
-  broad, long-term to-do items.
-
-* [Future](future.md) - more hypothetical, wacky ideas.
-
-* [More notes](more-notes.md) - grab-bag for notes that need to be organized
+* [Future](future.md). Hypothetical, wacky ideas.
 
 
+### Developer documentation
+
+* [To do](). Stuff I'm working on currently
+
+* [Roadmap](roadmap.md). High-level direction; broad, long term to-do items.
+
+* [Implementation](implementation.md). Detailed technical notes.
+
+* [More notes](notes.md). Miscellaneous notes that have yet to be organized
+
+
+### Links to test / demo pages
+
+If you're viewing this in a browser with config-one and tree-chart as 
+subdirectories or soft-links from this project repo's root, then these links
+should work:
+
+* Test pages;
+
+    * config-one/test/index.html - web-page driver for the mocha test suite
+
+### Developing, building, and testing
+
+Here's very abbreviated rundown of the tools that are implementd here.
+
+Here are the various build steps available, in *roughly* the order that
+they'd typically be performed.
+
+```
+# Install all the dependencies
+npm install   #=> they are installed to node_modules/
+
+# Run mocha tests against the *sources*
+npm test      #=> report at ../test/reports/src/test-report.html
+
+# Build the distribution bundle
+webpack       #=> dist/config-one.js
+
+# Run the same mocha tests against the newly built distribution bundle.
+npm run test-dist   #=> http://localhost:9000/config-one/test/reports/src/test-report.html
+
+
+```

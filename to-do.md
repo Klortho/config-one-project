@@ -1,5 +1,87 @@
 # To do - config-one
 
+## Build configuration
+
+Reference: http://stackoverflow.com/questions/32385219/mocha-tests-dont-run-with-webpack-and-mocha-loader
+
+Some general principles:
+
+* Try not to mix product files into the same directories as sources. So test
+  reports and the like go into `build`.
+* Except for the demos, I guess it's better *not* to have an index.html in a
+  directory, because then you can't see it's contents.
+
+
+
+
+* Get rid of C1_TARGET, or maybe replace it with "HOST_ENVIRONMENT", or
+  something like that.
+
+
+
+
+
+
+
+
+* Reorganize the directory structure, mixing the webpack-test stuff in:
+
+    ```
+    /
+      package.json
+      webpack.config.js
+      ...
+      src/
+      dist/  - just for final distribution packages
+      test/
+        ✓run.sh - just runs the mocha tests without bundling - this is currently
+            test.sh. It is what is invoked by the `npm test` scripts.
+        ✓index.html  - driver for the mocha tests in the browser, the main JS
+            this invokes are ../build-{src|dest}/test-bundle.js.
+        webpack.test.config.js
+        check-spec.js  - and any other utility modules
+
+        unit/         - sources for the unit tests
+            main.js   - currently this is test/index.js
+            ...test.js
+            subdir/ ...
+        smoke/
+            index.html
+            smoke.js
+        build/      - test bundles
+            test-bundle-src.js
+            test-bundle-dist.js
+        reports/
+            src/    - separate destination for each unit-under-test
+            dist/
+
+* Add links to all the test/demo pages from the top-level project page
+* For the web-page drivers of the mocha tests, add a scriptlet that gives
+  some indication if there's a bad or missing file, or js exception.
+
+* Coverage
+
+* Test results page enhancements:
+    * Get some environment metadata up there
+    * Also git SHA, date, etc.
+
+* Make sure you have both dev and prod builds: sourcemaps, minified, etc.
+
+* Live reload
+    * Is that what "hot" is all about?
+
+* Change the name of examples -> node-examples, because they do not work in 
+  the browser.
+
+* What about test reports / records for tests that run on the server?
+
+* Clean up / harmonize script names in package.json
+
+* What about babel? I had this in package.json:
+  `"babel src --presets babel-preset-es2015 --out-dir dist",`, but now
+  I don't think I'm even using it through webpack.
+
+
 ## Fix loading of JS files with dist/config1.js
 
 I need to fix it so that the webpack-generated dist in dist/config1.js can 
@@ -13,57 +95,11 @@ but I need to try it again.
 In the meantime, test-read is disabled for the dist.
 
 
-## Build configuration
 
-* Send out an email *soon* about getting this design reviewed by the rest of
-  the JTDG team.
-
-Reference: http://stackoverflow.com/questions/32385219/mocha-tests-dont-run-with-webpack-and-mocha-loader
-
-* Get rid of C1_BUILD_TARGET, or maybe replace it with "HOST_ENVIRONMENT", or
-  something like that.
-
-* Reorganize the directory structure, mixing the webpack-test stuff in:
-
-    ```
-    /
-      package.json
-      webpack.config.js
-      ...
-      src/
-      dist/  - just for final distribution packages
-      test/
-        run.sh - just runs the mocha tests without bundling - this is currently
-            test.sh. It is what is invoked by the `npm test` scripts.
-        index.html  - driver for the mocha tests in the browser.
-        webpack.test.config.js
-        check-spec.js  - and any other utility modules
-
-        unit/         - sources for the unit tests
-            main.js   - currently this is test/index.js
-            ...test.js
-            subdir/ ...
-        smoke/
-            index.html
-            smoke.js
-        build-src/    - separate destination for each unit-under-test
-        build-dist/
+## Tool to run all the different test envs
 
 
-* Coverage
 
-* Test results page enhancements:
-    * Get some environment metadata up there
-    * Also git SHA, date, etc.
-
-* Live reload
-    * Is that what "hot" is all about?
-
-* Change the name of examples -> node-examples, because they do not work in 
-  the browser.
-
-
-* Clean up / harmonize script names in package.json
 
 
 ## Performance analysis

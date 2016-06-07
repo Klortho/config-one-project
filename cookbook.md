@@ -1,7 +1,8 @@
 # Cookbook
 
-This page is for describing some of the less-obvious features of the library,
-and how they can be used to solve an array of use-cases.
+This page goes beyond basic usage information, to describe some of the 
+less-obvious features of the library, and how they can be leveraged to solve 
+a variety of common problems.
 
 ## Source specifiers / converters
 
@@ -62,7 +63,6 @@ E(cfg1, cfg2, cfg3) == E(E(cfg1, cfg2), cfg3)
 -> This means we have a requirement to generate a uid for a view, in such a
 way that they combine deterministically.
 Could we use symbols for these?
-
 
 
 ## Integrating options overides with class inheritance
