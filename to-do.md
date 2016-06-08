@@ -1,5 +1,10 @@
 # To do - config-one
 
+## Tree-chart refactoring
+
+* See the [roadmap](roadmap.js).
+
+
 ## Build configuration
 
 Reference: http://stackoverflow.com/questions/32385219/mocha-tests-dont-run-with-webpack-and-mocha-loader
